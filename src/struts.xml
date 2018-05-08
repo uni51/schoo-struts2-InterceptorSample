@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.convention.result.path" value="/" />
+	
+	<package name="sample" extends="struts-default">
+		<!-- 例外が発生した場合の画面を設定 -->
+		<global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+        
+        <!-- 処理対象の例外を設定 -->
+        <global-exception-mappings>
+            <exception-mapping result="error" exception="java.lang.Exception" />
+        </global-exception-mappings>
+	</package>
+</struts>
